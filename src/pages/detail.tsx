@@ -79,21 +79,4 @@ const Detail: React.FC = () => {
   );
 };
 
-// Function untuk menangkap Pokémon
-const catchPokemon = (pokemon: any) => {
-  const success = Math.random() < 0.5;
-
-  if (success) {
-    const nickname = prompt("Enter a nickname:");
-    if (nickname) {
-      let myPokemons = JSON.parse(localStorage.getItem("myPokemons") || "[]");
-      myPokemons.push({ ...pokemon, nickname });
-      localStorage.setItem("myPokemons", JSON.stringify(myPokemons));
-      alert(`${nickname} was caught!`);
-    }
-  } else {
-    alert("The Pokémon escaped!");
-  }
-};
-
 export default Detail;
